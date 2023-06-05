@@ -14,13 +14,90 @@
       name="description"
       content="Control Finance - Seu controle financeiro"
     />
+    <link rel="stylesheet" href="./src/styles/reset.css" />
     <link rel="stylesheet" href="./src/styles/globalStyles.css" />
     <link rel="stylesheet" href="./src/styles/index.css" />
+
+    <script type="module" src="./src/scripts/index.js" defer></script>
+
   </head>
-  <body>
-    <main id="app"></main>
-    <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
+  <body class="container">
+    <header>
+      <div class="header__container">
+        <h1><span>Control </span>Finance</h1>
+        <button class="open-modal">Registar novo valor</button>
+      </div>
+    </header>
+
+      <main id="app">
+        <section class="financial-summary">
+          <div class="financial-summary__content">
+            <h2>Resumo financeiro</h2>
+
+            <div class="financial-summary__buttons">
+              <button>Todos</button>
+              <button>Entradas</button>
+              <button>Saídas</button>
+            </div>
+
+            <div class="financial-summary__sum-of-values">
+              <h2>Soma dos valores</h2>
+              <p>R$: 2.120,00</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="inputs-or-outputs">
+          <ul class="inputs-or-outputs__ul">
+            <li class="card">
+              <div class="card__container">
+                <p>R$ 40,00</p>
+
+                <div>
+                  <p class="category-tag">Entrada</p>
+                  <img class="button-delete-card" src="./src/assets/img/trash_grey.svg" all="trash"></img>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <section class="modal__container">
+        <dialog open class="modal__controller">
+          <ul class="modal__content">
+            <li class="modal__li">
+              <h2>Registro de valor</h2>
+
+              <small>
+                Digite o valor e em seguida aperte no botão referente ao tipo do valor 
+              </small>
+
+              <form>
+                <label for="value">Valor</label>
+
+                <input type="number" id="value" name="value" placeholder="R$ 00,00">
+
+                <div class="type-value">
+                  <h2>Tipo de valor</h2>
+
+                  <label for="input-button">Entrada</label>
+                  <input type="radio" id="input-button" name="input-button">
+
+                  <label for="output-button">Saída</label>
+                  <input type="radio" id="output-button" name="output-button">
+                </div>
+
+                <div class="add-value">
+                  <button class="close__modal">Cancelar</button>
+
+                  <button class="add">Inserir valor</button>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </dialog>
+      </section>
+
   </body>
 </html>
