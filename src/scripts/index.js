@@ -1,1 +1,3 @@
-/* Desenvolva sua lógica aqui */
+import { handleModal } from "./modal.js";
+
+handleModal()

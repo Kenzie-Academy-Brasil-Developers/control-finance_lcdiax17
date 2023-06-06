@@ -1,0 +1,26 @@
+.modal__controller{
+    border: none;
+    border-radius: var(--radius-1);
+    padding: var(--content-padding);
+    height: 20.375rem;
+    width: 16.5625rem;
+    margin-bottom: 7.625rem;
+}
+
+.modal__li{
+    display: flex;
+    flex-direction: column;
+    gap: var(--all-gap)
+}
+
+.modal__li > h2{
+
+}
+
+.modal__li > small{
+
+}
+
+.modal__li > form{
+    background-color: aqua;
+}

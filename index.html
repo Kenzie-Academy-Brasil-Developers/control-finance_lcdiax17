@@ -1,103 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control Finance</title>
-    <link
-      rel="shortcut icon"
-      href="./src/assets/favicon.ico"
-      type="image/x-icon"
-    />
-    <meta
-      name="description"
-      content="Control Finance - Seu controle financeiro"
-    />
-    <link rel="stylesheet" href="./src/styles/reset.css" />
-    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
 
-    <script type="module" src="./src/scripts/index.js" defer></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control Finance</title>
+  <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Control Finance - Seu controle financeiro" />
+  <link rel="stylesheet" href="./src/styles/reset.css" />
+  <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+  <link rel="stylesheet" href="./src/styles/index.css" />
+  <link rel="stylesheet" href="./src/styles/modal.css" />
 
-  </head>
-  <body class="container">
-    <header>
-      <div class="header__container">
-        <h1><span>Control </span>Finance</h1>
-        <button class="open-modal">Registar novo valor</button>
+  <script type="module" src="./src/scripts/index.js" defer></script>
+
+</head>
+
+<body>
+  <header>
+    <div class="header__container">
+      <h1><span>Control </span>Finance</h1>
+      <button class="open-modal">Registar novo valor</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="financial-summary">
+      <div class="financial-summary__content">
+        <h2>Resumo financeiro</h2>
+
+        <div class="financial-summary__buttons">
+          <button>Todos</button>
+          <button>Entradas</button>
+          <button>Saídas</button>
+        </div>
+
+        <div class="financial-summary__sum-of-values">
+          <h2>Soma dos valores</h2>
+          <p>R$ 2.120,00</p>
+        </div>
       </div>
-    </header>
+    </section>
 
-      <main id="app">
-        <section class="financial-summary">
-          <div class="financial-summary__content">
-            <h2>Resumo financeiro</h2>
+    <section class="inputs-or-outputs">
+      <ul class="inputs-or-outputs__ul">
 
-            <div class="financial-summary__buttons">
-              <button>Todos</button>
-              <button>Entradas</button>
-              <button>Saídas</button>
-            </div>
+        <li class="card">
+          <div class="card__container">
+            <p>R$ 40,00</p>
 
-            <div class="financial-summary__sum-of-values">
-              <h2>Soma dos valores</h2>
-              <p>R$: 2.120,00</p>
+            <div class="card__trash-container">
+              <p class="category-tag">Entrada</p>
+              <img class="button-delete-card" src="./src/assets/img/trash_grey.svg" all="trash"></img>
             </div>
           </div>
-        </section>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-        <section class="inputs-or-outputs">
-          <ul class="inputs-or-outputs__ul">
-            <li class="card">
-              <div class="card__container">
-                <p>R$ 40,00</p>
+  <dialog class="modal__controller">
+    <ul class="modal__content">
+      <li class="modal__li">
+        <h2>Registro de valor</h2>
 
-                <div>
-                  <p class="category-tag">Entrada</p>
-                  <img class="button-delete-card" src="./src/assets/img/trash_grey.svg" all="trash"></img>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </section>
-      </main>
+        <small>
+          Digite o valor e em seguida aperte no botão referente ao tipo do valor
+        </small>
 
-      <section class="modal__container">
-        <dialog open class="modal__controller">
-          <ul class="modal__content">
-            <li class="modal__li">
-              <h2>Registro de valor</h2>
+        <form>
+          <label for="value">Valor</label>
 
-              <small>
-                Digite o valor e em seguida aperte no botão referente ao tipo do valor 
-              </small>
+          <input type="number" id="value" name="value" placeholder="R$ 00,00">
 
-              <form>
-                <label for="value">Valor</label>
+          <div class="type-value">
+            <h2>Tipo de valor</h2>
 
-                <input type="number" id="value" name="value" placeholder="R$ 00,00">
+            <label for="input-button">Entrada</label>
+            <input type="radio" id="input-button" name="input-button">
 
-                <div class="type-value">
-                  <h2>Tipo de valor</h2>
+            <label for="output-button">Saída</label>
+            <input type="radio" id="output-button" name="output-button">
+          </div>
 
-                  <label for="input-button">Entrada</label>
-                  <input type="radio" id="input-button" name="input-button">
+          <div class="add-value">
+            <button class="close__modal">Cancelar</button>
 
-                  <label for="output-button">Saída</label>
-                  <input type="radio" id="output-button" name="output-button">
-                </div>
+            <button class="add">Inserir valor</button>
+          </div>
 
-                <div class="add-value">
-                  <button class="close__modal">Cancelar</button>
+          <button class="close__modal--diferent">X</button>
+        </form>
+      </li>
+    </ul>
+  </dialog>
 
-                  <button class="add">Inserir valor</button>
-                </div>
-              </form>
-            </li>
-          </ul>
-        </dialog>
-      </section>
 
-  </body>
+</body>
+
 </html>
