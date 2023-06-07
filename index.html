@@ -70,18 +70,20 @@
         </small>
 
         <form>
-          <label for="value">Valor</label>
-
-          <input type="number" id="value" name="value" placeholder="R$ 00,00">
+          <div class="form__input">
+            <label for="value">Valor</label>
+  
+            <input type="number" name="value" placeholder="R$ 00,00">
+          </div>
 
           <div class="type-value">
             <h2>Tipo de valor</h2>
 
-            <label for="input-button">Entrada</label>
-            <input type="radio" id="input-button" name="input-button">
+            <label class="label-focus" for="input-button">Entrada</label>
+            <input type="radio" name="input-button">
 
-            <label for="output-button">Saída</label>
-            <input type="radio" id="output-button" name="output-button">
+            <label class="label-focus" for="output-button">Saída</label>
+            <input type="radio" name="output-button">
           </div>
 
           <div class="add-value">
@@ -89,11 +91,11 @@
 
             <button class="add">Inserir valor</button>
           </div>
-
-          <button class="close__modal--diferent">X</button>
         </form>
+
       </li>
     </ul>
+    <button class="close__modal--diferent">X</button>
   </dialog>
 
 
