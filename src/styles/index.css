@@ -16,9 +16,6 @@
     font-weight: var(--font-weight-2);
 }
 
-.open-modal{
-    animation: appearFromTop 0.4s linear
-}
 
 .financial-summary__content{
     display: flex;

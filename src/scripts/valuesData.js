@@ -1,6 +1,6 @@
-const valuesCategory = ["Entrada", "Saída"];
+export const valuesCategory = ["Entrada", "Saída"];
 
-let insertedValues = [
+ export let insertedValues = [
   {
     id: 1,
     value: 90.0,
@@ -18,4 +18,4 @@ let insertedValues = [
   },
 ];
 
-let insertedValuesFiltered = [];
+export let insertedValuesFiltered = [];
