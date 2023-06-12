@@ -16,6 +16,10 @@
     font-weight: var(--font-weight-2);
 }
 
+.open-modal{
+    animation: appearFromTop 0.4s linear
+}
+
 .financial-summary__content{
     display: flex;
     flex-direction: column;
@@ -98,4 +102,10 @@
       max-width: 43rem;
       margin: 0 10rem;
     }
+/* 
+    .header__container{
+        padding: 3rem 9.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+    } */
   }

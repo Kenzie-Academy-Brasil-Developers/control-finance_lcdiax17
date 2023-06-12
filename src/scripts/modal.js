@@ -14,8 +14,14 @@ export const handleModal = () =>{
     const closeModal = () =>{
         const modalController = document.querySelector('.modal__controller')
         const buttonCloseModal = document.querySelector('.close__modal')
+        const secondButtonCloseModal = document.querySelector('.close__modal--diferent')
+
 
         buttonCloseModal.addEventListener('click', () =>{
+            modalController.close()
+        })
+
+        secondButtonCloseModal.addEventListener('click', () =>{
             modalController.close()
         })
     }

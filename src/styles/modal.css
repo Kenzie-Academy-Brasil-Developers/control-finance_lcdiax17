@@ -6,6 +6,7 @@
     height: 21.375rem;
     width: 16.5625rem;
     margin-bottom: 6.625rem;
+    animation: appearFromTop 0.4s linear
 }
 
 .modal__li{

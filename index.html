@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./src/styles/globalStyles.css" />
   <link rel="stylesheet" href="./src/styles/index.css" />
   <link rel="stylesheet" href="./src/styles/modal.css" />
+  <link rel="stylesheet" href="./src/styles/animations.css">
 
   <script type="module" src="./src/scripts/index.js" defer></script>
 
@@ -28,9 +29,9 @@
   <main class="container">
     <section class="financial-summary">
       <div class="financial-summary__content">
-        <h2>Resumo financeiro</h2>
-
         <div class="financial-summary__buttons">
+          <h2>Resumo financeiro</h2>
+          
           <button>Todos</button>
           <button>Entradas</button>
           <button>Saídas</button>
@@ -80,10 +81,10 @@
             <h2>Tipo de valor</h2>
 
             <label class="label-focus" for="input-button">Entrada</label>
-            <input type="radio" name="input-button">
+            <input type="radio" id="input-button">
 
             <label class="label-focus" for="output-button">Saída</label>
-            <input type="radio" name="output-button">
+            <input type="radio" id="output-button">
           </div>
 
           <div class="add-value">
