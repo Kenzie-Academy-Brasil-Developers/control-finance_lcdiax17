@@ -45,7 +45,7 @@ const renderFinancialSummary = () =>{
     return divSummaryContent
 }
 
-const renderCard = (value) =>{
+const renderCard = (array) =>{
     const liCard = document.createElement('li')
     const divCardContainer = document.createElement('div')
     const valueCard = document.createElement('p')
@@ -59,7 +59,7 @@ const renderCard = (value) =>{
     categoryCard.classList.add('category-tag')
     imageTrashButton.classList.add('button-delete-card')
 
-    valueCard.innerText = `R$ ${value.value}`
+    valueCard.innerText = `R$ ${array.value}`
     categoryCard.innerText = 'Entrada'
 
     divCardContainer.append(valueCard, divTrashContainer)

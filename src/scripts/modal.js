@@ -1,3 +1,5 @@
+import { insertedValues } from "./valuesData.js"
+
 export const handleModal = () =>{
     const modalController = document.querySelector('.modal__controller')
     const buttonOpenModal = document.querySelector('.open-modal')
@@ -25,5 +27,17 @@ export const handleModal = () =>{
             modalController.close()
         })
     }
+}
+
+export const handleNewValue = (array) =>{
+    const button = document.querySelector('.add')
+
+    let newValue = {}
+
+    button.addEventListener('click', (event) =>{
+        event.preventDefault()
+
+        
+    })
 }
 
