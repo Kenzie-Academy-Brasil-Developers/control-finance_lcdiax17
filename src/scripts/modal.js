@@ -1,10 +1,6 @@
-import { insertedValues } from "./valuesData.js"
-
 export const handleModal = () =>{
     const modalController = document.querySelector('.modal__controller')
     const buttonOpenModal = document.querySelector('.open-modal')
-
-
 
     buttonOpenModal.addEventListener('click', () =>{
 
@@ -29,15 +25,18 @@ export const handleModal = () =>{
     }
 }
 
-export const handleNewValue = (array) =>{
-    const button = document.querySelector('.add')
+export const handleRegisterValue = (array) =>{
+    const buttonInsert = document.querySelector('.add')
+    const inputValue = document.querySelector('.input-value')
+    const inputRadio = document.querySelector('.input-radio')
+    const outputRadio = document.querySelector('.output-radio')
+
 
     let newValue = {}
 
-    button.addEventListener('click', (event) =>{
+    buttonInsert.addEventListener('click', (event) =>{
         event.preventDefault()
 
-        
     })
 }
 

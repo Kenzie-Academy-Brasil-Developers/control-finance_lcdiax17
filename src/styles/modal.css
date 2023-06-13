@@ -51,6 +51,12 @@
     font-size: var(--font-size-4);
 }
 
+input[type="radio"]:checked + label{
+    border: 0.125rem solid var(--color-brand-1);
+    color: var(--color-brand-1);
+    background-color: var(--color-brand-3);
+}
+
 .type-value{
     display: flex;
     flex-direction: column;

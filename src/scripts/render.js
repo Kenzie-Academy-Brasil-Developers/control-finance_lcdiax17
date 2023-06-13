@@ -1,14 +1,15 @@
-export const render = (value) =>{
+export const render = (array) =>{
  const financialSummarySection = document.querySelector('.financial-summary')
  const inputsOrOutputsUl = document.querySelector('.inputs-or-outputs__ul')
 
     financialSummarySection.innerHTML = " "
     inputsOrOutputsUl.innerHTML = " "
-
+    
     const sectionSummary = renderFinancialSummary()
     financialSummarySection.appendChild(sectionSummary)
     
-    value.forEach(element =>{
+    array.forEach(element =>{
+    
         let allValues = element
         let card = renderCard(allValues)
 
@@ -36,7 +37,7 @@ const renderFinancialSummary = () =>{
     buttonInput.innerText = 'Entradas'
     buttonOutput.innerText = 'Saídas'
     sumValuesTitle.innerText = 'Soma dos valores'
-    allValues.innerText = 'R$ 2000'
+
 
     divButtons.append(divButtonsTitle, buttonAll, buttonInput, buttonOutput)
     divSumValues.append(sumValuesTitle, allValues)
@@ -46,6 +47,7 @@ const renderFinancialSummary = () =>{
 }
 
 const renderCard = (array) =>{
+    
     const liCard = document.createElement('li')
     const divCardContainer = document.createElement('div')
     const valueCard = document.createElement('p')
@@ -58,10 +60,17 @@ const renderCard = (array) =>{
     divTrashContainer.classList.add('card__trash-container')
     categoryCard.classList.add('category-tag')
     imageTrashButton.classList.add('button-delete-card')
-
-    valueCard.innerText = `R$ ${array.value}`
-    categoryCard.innerText = 'Entrada'
-
+    
+    
+    categoryCard.innerText = array.categoryID
+    if(array.categoryID === 0){
+        categoryCard.innerText = 'Entrada'
+    }else if(array.categoryID === 1){
+        categoryCard.innerText = 'Saída'
+    }
+    
+    valueCard.innerText = `R$ ${array.value.toFixed(1)}`
+    
     divCardContainer.append(valueCard, divTrashContainer)
     divTrashContainer.append(categoryCard, imageTrashButton)
 
