@@ -76,17 +76,17 @@
           <div class="form__input">
             <label for="value">Valor</label>
   
-            <input class="input-form" type="number" name="value" placeholder="R$ 00,00">
+            <input class="input-value" type="number" name="value" placeholder="R$ 00,00">
           </div>
 
           <div class="type-value">
             <h2>Tipo de valor</h2>
 
-            <input checked class="input-form" type="radio" name="categoryId" id="input-button" value="0">
+            <input checked hidden type="radio" id="input-button" name="categoryID" value="0">
             <label  for="input-button">Entrada</label>
+            <input hidden type="radio" id="output-button" name="categoryID" value="1">
+            <label  for="output-button">Saída</label>
 
-            <input class="input-form" type="radio" name="categoryId" id="output-button" value="1">
-            <label for="output-button">Saída</label>
           </div>
 
           <div class="add-value">
@@ -100,7 +100,6 @@
     </ul>
     <button class="close__modal--diferent">X</button>
   </dialog>
-
 
 </body>
 

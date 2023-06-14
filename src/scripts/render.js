@@ -1,3 +1,6 @@
+import { handleDeleteCard } from "./index.js"
+import { insertedValues } from "./valuesData.js"
+
 export const render = (array) =>{
  const financialSummarySection = document.querySelector('.financial-summary')
  const inputsOrOutputsUl = document.querySelector('.inputs-or-outputs__ul')
@@ -5,7 +8,7 @@ export const render = (array) =>{
     financialSummarySection.innerHTML = " "
     inputsOrOutputsUl.innerHTML = " "
     
-    const sectionSummary = renderFinancialSummary()
+    const sectionSummary = renderFinancialSummary(insertedValues)
     financialSummarySection.appendChild(sectionSummary)
     
     array.forEach(element =>{
@@ -15,9 +18,11 @@ export const render = (array) =>{
 
         inputsOrOutputsUl.appendChild(card)
     })
+    handleDeleteCard(array)
 }
 
-const renderFinancialSummary = () =>{
+const renderFinancialSummary = (array) =>{
+    console.log( array.value)
     const divSummaryContent = document.createElement('div')
     const divButtons = document.createElement('div')
     const divButtonsTitle = document.createElement('h2')
@@ -31,13 +36,15 @@ const renderFinancialSummary = () =>{
     divSummaryContent.classList.add('financial-summary__content')
     divButtons.classList.add('financial-summary__buttons');
     divSumValues.classList.add('financial-summary__sum-of-values')
+    allValues.classList.add('count-values')
+
 
     divButtonsTitle.innerText = 'Resumo financeiro'
     buttonAll.innerText = 'Todos'
     buttonInput.innerText = 'Entradas'
     buttonOutput.innerText = 'Saídas'
     sumValuesTitle.innerText = 'Soma dos valores'
-
+    allValues.innerText = `R$ ${array.value}`
 
     divButtons.append(divButtonsTitle, buttonAll, buttonInput, buttonOutput)
     divSumValues.append(sumValuesTitle, allValues)
@@ -46,7 +53,7 @@ const renderFinancialSummary = () =>{
     return divSummaryContent
 }
 
-const renderCard = (array) =>{
+export const renderCard = (array) =>{
     
     const liCard = document.createElement('li')
     const divCardContainer = document.createElement('div')
@@ -70,6 +77,10 @@ const renderCard = (array) =>{
     }
     
     valueCard.innerText = `R$ ${array.value.toFixed(1)}`
+
+    imageTrashButton.dataset.cardId = array.id
+    imageTrashButton.src = './src/assets/img/trash_grey.svg'
+    imageTrashButton.alt = 'trash button'
     
     divCardContainer.append(valueCard, divTrashContainer)
     divTrashContainer.append(categoryCard, imageTrashButton)
@@ -78,3 +89,5 @@ const renderCard = (array) =>{
 
     return liCard
 }
+
+

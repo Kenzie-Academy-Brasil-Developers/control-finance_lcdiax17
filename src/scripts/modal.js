@@ -1,3 +1,5 @@
+import { render } from "./render.js"
+
 export const handleModal = () =>{
     const modalController = document.querySelector('.modal__controller')
     const buttonOpenModal = document.querySelector('.open-modal')
@@ -15,7 +17,8 @@ export const handleModal = () =>{
         const secondButtonCloseModal = document.querySelector('.close__modal--diferent')
 
 
-        buttonCloseModal.addEventListener('click', () =>{
+        buttonCloseModal.addEventListener('click', (event) =>{
+            event.preventDefault()
             modalController.close()
         })
 
@@ -28,15 +31,22 @@ export const handleModal = () =>{
 export const handleRegisterValue = (array) =>{
     const buttonInsert = document.querySelector('.add')
     const inputValue = document.querySelector('.input-value')
-    const inputRadio = document.querySelector('.input-radio')
-    const outputRadio = document.querySelector('.output-radio')
-
-
+    
     let newValue = {}
-
+    
     buttonInsert.addEventListener('click', (event) =>{
         event.preventDefault()
+        const inputRadio = document.querySelector("input[type='radio']:checked")
+        
+        newValue[inputValue.name] = parseInt(inputValue.value)
+        newValue[inputRadio.name] = parseInt(inputRadio.value)
 
+        
+        newValue.id = array.length + 1
+        array.push(newValue)
+        console.log(newValue)
+        render(array)
     })
+    
 }
 
