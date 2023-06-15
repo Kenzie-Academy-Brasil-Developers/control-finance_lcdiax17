@@ -1,4 +1,5 @@
 import { handleDeleteCard } from "./index.js"
+import { insertedValues } from "./valuesData.js"
 
 export const render = (array) =>{
  const financialSummarySection = document.querySelector('.financial-summary')
@@ -7,7 +8,7 @@ export const render = (array) =>{
     financialSummarySection.innerHTML = " "
     inputsOrOutputsUl.innerHTML = " "
 
-    const sectionSummary = renderFinancialSummary(array)
+    const sectionSummary = renderFinancialSummary(insertedValues)
     financialSummarySection.appendChild(sectionSummary)
     
     array.forEach(element =>{
@@ -17,6 +18,7 @@ export const render = (array) =>{
 
         inputsOrOutputsUl.appendChild(card)
     })
+    
     handleDeleteCard(array)
 }
 
@@ -37,7 +39,7 @@ const renderFinancialSummary = (array) =>{
     divButtons.classList.add('financial-summary__buttons');
     divSumValues.classList.add('financial-summary__sum-of-values')
     allValues.classList.add('count-values')
-
+    buttonAll.classList.add('filter__all')
     buttonInput.classList.add('filter__button')
     buttonOutput.classList.add('filter__button')
 

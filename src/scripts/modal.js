@@ -42,7 +42,7 @@ export const handleRegisterValue = (array) =>{
         newValue[inputRadio.name] = parseInt(inputRadio.value)
 
         newValue.id = array.length + 1
-        array.push(newValue)
+        array.unshift(newValue)
         render(array)
     })
     
