@@ -3,7 +3,6 @@ export const filterCards = (array, categoryIdCard) =>{
         if(value.categoryID === categoryIdCard){
             return value
         }
-
-        return filteredCards
     })
+    return filteredCards
 }

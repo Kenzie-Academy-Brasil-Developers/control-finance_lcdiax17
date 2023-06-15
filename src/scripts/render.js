@@ -47,9 +47,9 @@ const renderFinancialSummary = (array) =>{
     buttonAll.innerText = 'Todos'
 
     buttonInput.innerText = 'Entradas'
-    buttonInput.dataset.butonId = '0'
-    buttonOutput.innerText = 'Saídas'
-    buttonOutput.dataset.butonId = '1'
+    buttonInput.dataset.buttonId = '0'
+    buttonOutput.innerText = 'Saidas'
+    buttonOutput.dataset.buttonId = '1'
 
     sumValuesTitle.innerText = 'Soma dos valores'
     valueLogo.innerText = 'R$:'
@@ -85,7 +85,7 @@ export const renderCard = (array) =>{
         categoryCard.innerText = 'Saída'
     }
     
-    valueCard.innerText = `R$: ${array.value.toFixed(2)}`
+    valueCard.innerText = `R$ ${array.value.toFixed(2)}`
 
     imageTrashButton.dataset.cardId = array.id
     imageTrashButton.src = './src/assets/img/trash_grey.svg'

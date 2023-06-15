@@ -1,6 +1,6 @@
 import { render} from "./render.js";
 import { handleModal, handleRegisterValue } from "./modal.js";
-import { insertedValues } from "./valuesData.js";
+import { insertedValues} from "./valuesData.js";
 import { filterCards } from "./filter.js";
 
 
@@ -24,19 +24,26 @@ export const handleDeleteCard = (array) =>{
 
 const handleFilterButtons = (array) =>{
     const buttons = document.querySelectorAll('.filter__button')
+    const buttonAll = document.querySelector('.filter__all')
 
     buttons.forEach(button =>{
         button.addEventListener('click', (event) =>{
-          const cardFiltered = filterCards(array, parseInt(event.target.dataset.buttonId))
+            const idButton = parseInt(event.target.dataset.buttonId)
+            const cardFiltered = filterCards(array, idButton)
 
-          render(cardFiltered)
-          console.log(render(cardFiltered))
+            render(cardFiltered)
         })
+    })
+
+    buttonAll.addEventListener('click', () =>{
+        if(buttonAll.textContent === 'Todos'){
+            render(insertedValues)
+        }
     })
 }
 
 render(insertedValues)
 handleModal()
 handleRegisterValue(insertedValues)
-handleFilterButtons()
+handleFilterButtons(insertedValues)
 
