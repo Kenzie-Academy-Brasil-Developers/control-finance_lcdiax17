@@ -1,5 +1,4 @@
 import { handleDeleteCard } from "./index.js"
-import { insertedValues } from "./valuesData.js"
 
 export const render = (array) =>{
  const financialSummarySection = document.querySelector('.financial-summary')
@@ -7,8 +6,8 @@ export const render = (array) =>{
 
     financialSummarySection.innerHTML = " "
     inputsOrOutputsUl.innerHTML = " "
-    
-    const sectionSummary = renderFinancialSummary(insertedValues)
+
+    const sectionSummary = renderFinancialSummary(array)
     financialSummarySection.appendChild(sectionSummary)
     
     array.forEach(element =>{
@@ -22,7 +21,7 @@ export const render = (array) =>{
 }
 
 const renderFinancialSummary = (array) =>{
-    console.log( array.value)
+
     const divSummaryContent = document.createElement('div')
     const divButtons = document.createElement('div')
     const divButtonsTitle = document.createElement('h2')
@@ -31,6 +30,7 @@ const renderFinancialSummary = (array) =>{
     const buttonOutput = document.createElement('button')
     const divSumValues = document.createElement('div')
     const sumValuesTitle = document.createElement('h2')
+    const valueLogo = document.createElement('p')
     const allValues = document.createElement('p')
 
     divSummaryContent.classList.add('financial-summary__content')
@@ -38,16 +38,23 @@ const renderFinancialSummary = (array) =>{
     divSumValues.classList.add('financial-summary__sum-of-values')
     allValues.classList.add('count-values')
 
+    buttonInput.classList.add('filter__button')
+    buttonOutput.classList.add('filter__button')
 
     divButtonsTitle.innerText = 'Resumo financeiro'
     buttonAll.innerText = 'Todos'
+
     buttonInput.innerText = 'Entradas'
+    buttonInput.dataset.butonId = '0'
     buttonOutput.innerText = 'Saídas'
+    buttonOutput.dataset.butonId = '1'
+
     sumValuesTitle.innerText = 'Soma dos valores'
-    allValues.innerText = `R$ ${array.value}`
+    valueLogo.innerText = 'R$:'
+    allValues.innerText = array.value
 
     divButtons.append(divButtonsTitle, buttonAll, buttonInput, buttonOutput)
-    divSumValues.append(sumValuesTitle, allValues)
+    divSumValues.append(sumValuesTitle, valueLogo, allValues)
     divSummaryContent.append(divButtons, divSumValues)
 
     return divSummaryContent
@@ -76,7 +83,7 @@ export const renderCard = (array) =>{
         categoryCard.innerText = 'Saída'
     }
     
-    valueCard.innerText = `R$ ${array.value.toFixed(1)}`
+    valueCard.innerText = `R$: ${array.value.toFixed(2)}`
 
     imageTrashButton.dataset.cardId = array.id
     imageTrashButton.src = './src/assets/img/trash_grey.svg'
@@ -89,5 +96,3 @@ export const renderCard = (array) =>{
 
     return liCard
 }
-
-

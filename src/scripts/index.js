@@ -1,7 +1,6 @@
-import { render } from "./render.js";
+import { render} from "./render.js";
 import { handleModal, handleRegisterValue } from "./modal.js";
 import { insertedValues } from "./valuesData.js";
-
 
 export const handleDeleteCard = (array) =>{
     const buttonsTrash = document.querySelectorAll('.button-delete-card')
@@ -23,12 +22,7 @@ export const handleDeleteCard = (array) =>{
 }
 
 
-const realTimeValues = (array) =>{
-    const values = document.querySelector('.count-values')
-    
-    
-}
-
 render(insertedValues)
 handleModal()
 handleRegisterValue(insertedValues)
+
