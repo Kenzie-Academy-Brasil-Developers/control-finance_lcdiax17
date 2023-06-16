@@ -55,7 +55,6 @@ const renderFinancialSummary = (array) =>{
     sumValuesTitle.innerText = 'Soma dos valores'
     valueLogo.innerText = 'R$:'
     allValues.innerText = array.reduce((accumulator, card) => accumulator + card.value, 0).toFixed(2)
-    // allValues.innerText = array.value
 
     divButtons.append(divButtonsTitle, buttonAll, buttonInput, buttonOutput)
     divSumValues.append(sumValuesTitle, valueLogo, allValues)
@@ -100,3 +99,5 @@ export const renderCard = (array) =>{
 
     return liCard
 }
+
+
