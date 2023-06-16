@@ -109,3 +109,24 @@ input[type="radio"]:checked + label{
     background-color: var(--color-brand-1);
     color: var(--color-grey-5)
 }
+
+@media (min-width: 1024px){
+    .modal__controller{
+        width: 24.5625rem;
+        height: 17rem;
+    }
+
+    .type-value{
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .add-value{
+        align-self: flex-end;
+    }
+
+    .add-value > button{
+        width: 7.5rem
+    }
+}
