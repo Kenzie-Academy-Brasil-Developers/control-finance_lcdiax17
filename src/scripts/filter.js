@@ -1,7 +1,7 @@
 export const filterCards = (array, categoryIdCard) =>{
-    const filteredCards = array.filter((value) => {
-        if(value.categoryID === categoryIdCard){
-            return value
+    const filteredCards = array.filter((category) => {
+        if(category.categoryID === categoryIdCard){
+            return category
         }
     })
     return filteredCards

@@ -32,9 +32,10 @@ export const handleRegisterValue = (array) =>{
     const buttonInsert = document.querySelector('.add')
     const inputValue = document.querySelector('.input-value')
     
-    let newValue = {}
     
     buttonInsert.addEventListener('click', (event) =>{
+        let newValue = {}
+
         event.preventDefault()
         const inputRadio = document.querySelector("input[type='radio']:checked")
         

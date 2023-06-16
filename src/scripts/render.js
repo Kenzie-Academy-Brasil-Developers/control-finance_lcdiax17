@@ -1,5 +1,6 @@
-import { handleDeleteCard } from "./index.js"
+import { handleDeleteCard, handleFilterButtons } from "./index.js"
 import { insertedValues } from "./valuesData.js"
+
 
 export const render = (array) =>{
  const financialSummarySection = document.querySelector('.financial-summary')
@@ -10,9 +11,9 @@ export const render = (array) =>{
 
     const sectionSummary = renderFinancialSummary(insertedValues)
     financialSummarySection.appendChild(sectionSummary)
+    handleFilterButtons(insertedValues)
     
     array.forEach(element =>{
-    
         let allValues = element
         let card = renderCard(allValues)
 
@@ -53,7 +54,8 @@ const renderFinancialSummary = (array) =>{
 
     sumValuesTitle.innerText = 'Soma dos valores'
     valueLogo.innerText = 'R$:'
-    allValues.innerText = array.value
+    allValues.innerText = array.reduce((accumulator, card) => accumulator + card.value, 0).toFixed(2)
+    // allValues.innerText = array.value
 
     divButtons.append(divButtonsTitle, buttonAll, buttonInput, buttonOutput)
     divSumValues.append(sumValuesTitle, valueLogo, allValues)

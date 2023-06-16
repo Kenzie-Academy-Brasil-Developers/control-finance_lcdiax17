@@ -22,7 +22,7 @@ export const handleDeleteCard = (array) =>{
     })
 }
 
-const handleFilterButtons = (array) =>{
+export const handleFilterButtons = (array) =>{
     const buttons = document.querySelectorAll('.filter__button')
     const buttonAll = document.querySelector('.filter__all')
 
@@ -30,7 +30,7 @@ const handleFilterButtons = (array) =>{
         button.addEventListener('click', (event) =>{
             const idButton = parseInt(event.target.dataset.buttonId)
             const cardFiltered = filterCards(array, idButton)
-
+            
             render(cardFiltered)
         })
     })
@@ -45,5 +45,4 @@ const handleFilterButtons = (array) =>{
 render(insertedValues)
 handleModal()
 handleRegisterValue(insertedValues)
-handleFilterButtons(insertedValues)
 
