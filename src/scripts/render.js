@@ -28,6 +28,7 @@ const renderFinancialSummary = (array) =>{
     const divSummaryContent = document.createElement('div')
     const divButtons = document.createElement('div')
     const divButtonsTitle = document.createElement('h2')
+    const divButtonsOrientation = document.createElement('div')
     const buttonAll = document.createElement('button')
     const buttonInput = document.createElement('button')
     const buttonOutput = document.createElement('button')
@@ -37,7 +38,8 @@ const renderFinancialSummary = (array) =>{
     const allValues = document.createElement('p')
 
     divSummaryContent.classList.add('financial-summary__content')
-    divButtons.classList.add('financial-summary__buttons');
+    divButtons.classList.add('financial-summary__buttons')
+    divButtonsOrientation.classList.add('financial-summary__buttons--direction')
     divSumValues.classList.add('financial-summary__sum-of-values')
     allValues.classList.add('count-values')
     buttonAll.classList.add('filter__all')
@@ -53,10 +55,10 @@ const renderFinancialSummary = (array) =>{
     buttonOutput.dataset.buttonId = '1'
 
     sumValuesTitle.innerText = 'Soma dos valores'
-    valueLogo.innerText = 'R$:'
-    allValues.innerText = array.reduce((accumulator, card) => accumulator + card.value, 0).toFixed(2)
+    allValues.innerText = `R$ ${array.reduce((accumulator, card) => accumulator + card.value, 0).toFixed(2)}`
 
-    divButtons.append(divButtonsTitle, buttonAll, buttonInput, buttonOutput)
+    divButtonsOrientation.append( buttonAll, buttonInput, buttonOutput)
+    divButtons.append(divButtonsTitle,divButtonsOrientation)
     divSumValues.append(sumValuesTitle, valueLogo, allValues)
     divSummaryContent.append(divButtons, divSumValues)
 
