@@ -9,7 +9,7 @@ export const render = (array) =>{
     financialSummarySection.innerHTML = " "
     inputsOrOutputsUl.innerHTML = " "
 
-    const sectionSummary = renderFinancialSummary(insertedValues)
+    const sectionSummary = renderFinancialSummary(array)
     financialSummarySection.appendChild(sectionSummary)
     handleFilterButtons(insertedValues)
     
@@ -56,7 +56,7 @@ const renderFinancialSummary = (array) =>{
 
     sumValuesTitle.innerText = 'Soma dos valores'
     allValues.innerText = `R$ ${array.reduce((accumulator, card) => accumulator + card.value, 0).toFixed(2)}`
-
+    console.log(allValues)
     divButtonsOrientation.append( buttonAll, buttonInput, buttonOutput)
     divButtons.append(divButtonsTitle,divButtonsOrientation)
     divSumValues.append(sumValuesTitle, valueLogo, allValues)
@@ -101,5 +101,3 @@ export const renderCard = (array) =>{
 
     return liCard
 }
-
-

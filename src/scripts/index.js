@@ -31,7 +31,7 @@ export const handleFilterButtons = (array) =>{
             
             const idButton = parseInt(event.target.dataset.buttonId)
             const cardFiltered = filterCards(array, idButton)
-            
+            console.log(cardFiltered)
             render(cardFiltered)
             
         })
