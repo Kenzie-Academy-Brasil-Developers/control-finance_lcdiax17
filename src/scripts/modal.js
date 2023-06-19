@@ -31,15 +31,24 @@ export const handleModal = () =>{
 export const handleRegisterValue = (array) =>{
     const buttonInsert = document.querySelector('.add')
     const inputValue = document.querySelector('.input-value')
-    
+
+
+    inputValue.addEventListener('keypress', (event) =>{
+
+        if(!checkInputChar(event)){
+            event.preventDefault()
+        }
+    })
+
     buttonInsert.addEventListener('click', (event) =>{
         let newValue = {}
 
         event.preventDefault()
 
+
         const inputRadio = document.querySelector("input[type='radio']:checked")
         
-        newValue[inputValue.name] = parseInt(isNaN(inputValue.value))
+        newValue[inputValue.name] = parseInt(inputValue.value)
         newValue[inputRadio.name] = parseInt(inputRadio.value)
 
         newValue.id = array.length + 1
@@ -47,4 +56,15 @@ export const handleRegisterValue = (array) =>{
         render(array)
     })
     
+}
+
+const checkInputChar = (event) =>{
+
+    const character = String.fromCharCode(event.keyCode)
+
+    const characterPattern = ('[0-9]')
+
+    if(character.match(characterPattern)){
+        return true
+    }
 }
