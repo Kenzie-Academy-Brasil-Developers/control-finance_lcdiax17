@@ -51,6 +51,11 @@
     font-size: var(--font-size-4);
 }
 
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
 input[type="radio"]:checked + label{
     border: 0.125rem solid var(--color-brand-1);
     color: var(--color-brand-1);
@@ -114,6 +119,7 @@ input[type="radio"]:checked + label{
     .modal__controller{
         width: 24.5625rem;
         height: 17rem;
+        margin-bottom: 10.625rem;
     }
 
     .type-value{
