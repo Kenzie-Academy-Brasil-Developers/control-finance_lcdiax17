@@ -5,6 +5,7 @@ import { insertedValues } from "./valuesData.js"
 export const render = (array) =>{
  const financialSummarySection = document.querySelector('.financial-summary')
  const inputsOrOutputsUl = document.querySelector('.inputs-or-outputs__ul')
+ const noValueUl = document.querySelector('.no-value-registered')
 
     financialSummarySection.innerHTML = " "
     inputsOrOutputsUl.innerHTML = " "
@@ -19,9 +20,11 @@ export const render = (array) =>{
 
         inputsOrOutputsUl.appendChild(card)
     })
-    
+        
     handleDeleteCard(array)
     
+    const divNovalue = createNoValue()
+    noValueUl.appendChild(divNovalue)
 }
 
 const renderFinancialSummary = (array) =>{
@@ -100,4 +103,19 @@ export const renderCard = (array) =>{
     liCard.append(divCardContainer, divTrashContainer)
 
     return liCard
+}
+
+const createNoValue = () =>{
+    const li = document.createElement('li')
+    const h3 = document.createElement('h3')
+    const p = document.createElement('p')
+
+    li.classList.add('no-value-registered__li')
+
+    h3.innerText = 'Nenhum valor registrado'
+    p.innerText = 'Registar novo valor'
+
+    li.append(h3, p)
+
+    return li
 }
