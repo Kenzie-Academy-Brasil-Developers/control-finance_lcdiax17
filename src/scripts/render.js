@@ -21,6 +21,7 @@ export const render = (array) =>{
     })
     
     handleDeleteCard(array)
+    
 }
 
 const renderFinancialSummary = (array) =>{
